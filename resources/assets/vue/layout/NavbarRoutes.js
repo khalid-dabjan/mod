@@ -1,0 +1,39 @@
+export default [
+    {
+        uri:'/',
+        name:'Home',
+        icon:''
+    },
+    {
+        uri:'/feed',
+        name:'My Feed',
+        icon:'fa fa-heart',
+        auth:true
+    },
+    {
+        uri:'/trending',
+        name:'Trending',
+        icon:'',
+        auth:true
+    },
+    {
+        uri:'/category/clothing',
+        name:'Clothing',
+        icon:''
+    },
+    {
+        uri:'/category/shoes',
+        name:'Shoes',
+        icon:''
+    },
+    {
+        uri:'/category/accessories',
+        name:'Accessories',
+        icon:''
+    },
+    {
+        uri:'/category/beauty',
+        name:'Beauty',
+        icon:''
+    }
+]

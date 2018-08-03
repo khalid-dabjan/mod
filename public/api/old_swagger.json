@@ -1,0 +1,3872 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "",
+    "version": "1.0.0",
+    "title": "Modasti Backend API",
+    "termsOfService": "",
+    "contact": {
+      "email": "biz@riseapps.co"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+    }
+  },
+  "host": "stage-api.modasti.net",
+  "basePath": "/api",
+  "tags": [
+    {
+      "name": "Modasti API Backend",
+      "description": "",
+      "externalDocs": {
+        "description": "Find out more",
+        "url": "http://beta.modasti.net"
+      }
+    },
+    {
+      "name": "api",
+      "description": "Access to API"
+    }
+  ],
+  "schemes": [
+    "http"
+  ],
+  "paths": {
+    "/signIn": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "login",
+        "description": "",
+        "operationId": "login",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Client Login",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "token": {
+                  "type": "string"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "userId": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "user_type": {
+                      "type": "string",
+                      "enum": [
+                        "user",
+                        "designer"
+                      ]
+                    },
+                    "avatar": {
+                      "type": "string"
+                    },
+                    "currency": {
+                      "type": "string"
+                    },
+                    "currency_id": {
+                      "type": "integer"
+                    }
+                  }
+                },
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/fbSignIn": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "facebook login",
+        "description": "",
+        "operationId": "fbLogin",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Client Login",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "fbToken": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "token": {
+                  "type": "string"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "userId": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "user_type": {
+                      "type": "string",
+                      "enum": [
+                        "user",
+                        "designer"
+                      ]
+                    },
+                    "avatar": {
+                      "type": "string"
+                    },
+                    "currency": {
+                      "type": "string"
+                    },
+                    "currency_id": {
+                      "type": "integer"
+                    }
+                  }
+                },
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/register": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "register",
+        "description": "",
+        "operationId": "register",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Client Register",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                },
+                "name": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "token": {
+                  "type": "string"
+                },
+                "data": {
+                  "type": "object",
+                  "properties": {
+                    "userId": {
+                      "type": "integer"
+                    },
+                    "name": {
+                      "type": "string"
+                    },
+                    "email": {
+                      "type": "string"
+                    },
+                    "user_type": {
+                      "type": "string",
+                      "enum": [
+                        "user",
+                        "designer"
+                      ]
+                    },
+                    "avatar": {
+                      "type": "string"
+                    },
+                    "currency": {
+                      "type": "string"
+                    },
+                    "currency_id": {
+                      "type": "integer"
+                    }
+                  }
+                },
+                "errors": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/homeTrends": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "get home trends",
+        "description": "",
+        "operationId": "homeTrends",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "items": {
+                  "$ref": "#/definitions/Items"
+                },
+                "sets": {
+                  "$ref": "#/definitions/Sets"
+                },
+                "group": {
+                  "$ref": "#/definitions/Group"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/homeFeeds": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "get home feeds",
+        "description": "",
+        "operationId": "homeFeeds",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Home Feeds",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "offset": {
+                  "type": "number"
+                },
+                "limit": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "sets": {
+                  "$ref": "#/definitions/Feeds"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/homeGroups": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "get home groups",
+        "description": "",
+        "operationId": "homeGroups",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Home Group",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "offset": {
+                  "type": "number"
+                },
+                "limit": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "mine": {
+                  "$ref": "#/definitions/Groups"
+                },
+                "in": {
+                  "$ref": "#/definitions/Groups"
+                },
+                "other": {
+                  "$ref": "#/definitions/Groups"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/setDetails": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "set details",
+        "description": "",
+        "operationId": "setDetails",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Home Group",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "setId": {
+                  "type": "number",
+                  "required": true
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/SetShort3"
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/groupDetails": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "group details",
+        "description": "",
+        "operationId": "groupDetails",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Home Group",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "groupId": {
+                  "type": "number",
+                  "required": true
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "group": {
+                  "type": "object",
+                  "$ref": "#/definitions/Group"
+                },
+                "photos": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "photo_id": {
+                        "type": "number"
+                      },
+                      "photo": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "number"
+                          },
+                          "photo_name": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/createGroup": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "create group",
+        "description": "",
+        "operationId": "createGroup",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Create Group",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "name": {
+                  "type": "string",
+                  "required": true
+                },
+                "description": {
+                  "type": "string"
+                },
+                "isPrivate": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/Group"
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/editGroup": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "edit group",
+        "description": "",
+        "operationId": "editGroup",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Edit Group",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "groupId": {
+                  "type": "string",
+                  "required": true
+                },
+                "name": {
+                  "type": "string",
+                  "required": true
+                },
+                "description": {
+                  "type": "string"
+                },
+                "isPrivate": {
+                  "type": "boolean"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "object",
+              "$ref": "#/definitions/Group"
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/deleteGroup": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "delete group",
+        "description": "",
+        "operationId": "deleteGroup",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Delete Group",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "groupId": {
+                  "type": "string",
+                  "required": true
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/getGroupMembers": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "group members",
+        "description": "",
+        "operationId": "getGroupMembers",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Group Members",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "groupId": {
+                  "type": "number",
+                  "required": true
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/removeGroupMember": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "remove group members",
+        "description": "",
+        "operationId": "removeGroupMembers",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Remove Group Members",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "groupId": {
+                  "type": "number",
+                  "required": true
+                },
+                "memberId": {
+                  "type": "number",
+                  "required": true
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/User"
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/getInvitedMembers": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "get invited members",
+        "description": "",
+        "operationId": "getInvitedMembers",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Remove Group Members",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "groupId": {
+                  "type": "number",
+                  "required": true
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "invited_id": {
+                    "type": "number"
+                  },
+                  "joined": {
+                    "type": "boolean"
+                  },
+                  "want_join": {
+                    "type": "boolean"
+                  },
+                  "user": {
+                    "$ref": "#/definitions/User"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/getFollowingUsers": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "get following users",
+        "description": "",
+        "operationId": "getFollowingUsers",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Remove Group Members",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "userId": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "users": {
+                    "$ref": "#/definitions/Users"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/getFollowersUsers": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "get followers users",
+        "description": "",
+        "operationId": "getFollowersUsers",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Remove Group Members",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "userId": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "users": {
+                    "$ref": "#/definitions/Users"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/inviteMembers": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "invite members",
+        "description": "",
+        "operationId": "inviteMembers",
+        "consumes": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Invite Members To Group",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "groupId": {
+                  "type": "number",
+                  "required": true
+                },
+                "users": {
+                  "type": "array",
+                  "required": true,
+                  "items": {
+                    "type": "number"
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/getSets": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "get sets",
+        "description": "",
+        "operationId": "getSets",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Sets",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "userId": {
+                  "type": "number"
+                },
+                "offset": {
+                  "type": "number"
+                },
+                "limit": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/MySets"
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/getItemsCategories": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "get items categories",
+        "description": "",
+        "operationId": "getItemsCategories",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Categories"
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/getItemsFromCategory": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "get items from Category",
+        "description": "",
+        "operationId": "getItemsFromCategory",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Group Members",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "categoryId": {
+                  "type": "number",
+                  "required": true
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Items"
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/browsePopular": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "browse popular",
+        "description": "",
+        "operationId": "browsePopular",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Browse Popular",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "offset": {
+                  "type": "number"
+                },
+                "limit": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "items": {
+                  "$ref": "#/definitions/Items"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/itemDetails": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "item details",
+        "description": "",
+        "operationId": "itemDetails",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Item Details",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "itemId": {
+                  "type": "number",
+                  "required": true
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Item&Similar"
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/getCollections": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "get my collections",
+        "description": "",
+        "operationId": "getMyCollections",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Create Collection",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "userId": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Collections"
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/createCollection": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "create collection",
+        "description": "",
+        "operationId": "createCollection",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Create Collection",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "required": true
+                },
+                "description": {
+                  "type": "string",
+                  "required": true
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "collection_id": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/deleteCollection": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "delete collection",
+        "description": "",
+        "operationId": "deleteCollection",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Create Collection",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "collectionId": {
+                  "type": "number",
+                  "required": true
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/addItemToCollection": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "add item to collection",
+        "description": "",
+        "operationId": "addItemToCollection",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "add Item To Collection",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "itemId": {
+                  "type": "number",
+                  "required": true
+                },
+                "collectionId": {
+                  "type": "number",
+                  "required": true
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Collection"
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/addSetToCollection": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "add set to collection",
+        "description": "",
+        "operationId": "addSetToCollection",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "add Set To Collection",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "setId": {
+                  "type": "number",
+                  "required": true
+                },
+                "collectionId": {
+                  "type": "number",
+                  "required": true
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Collection"
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/switchLike": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "switch like",
+        "description": "",
+        "operationId": "switchLike",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Switch Like",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "objId": {
+                  "type": "number",
+                  "required": true
+                },
+                "targetObject": {
+                  "type": "string",
+                  "enum": [
+                    "item",
+                    "set"
+                  ],
+                  "required": true
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "result": {
+                  "type": "string",
+                  "enum": [
+                    "Like removed",
+                    "Like added"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/getSetComments": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "get set comments",
+        "description": "",
+        "operationId": "getSetComments",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Get Set Comments",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "setId": {
+                  "type": "number",
+                  "required": true
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Comments"
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/addCommentToSet": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "add comment to set",
+        "description": "",
+        "operationId": "addCommentToSet",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Add Comment To Set",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "setId": {
+                  "type": "number",
+                  "required": true
+                },
+                "text": {
+                  "type": "string",
+                  "required": true
+                },
+                "parentId": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/search": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "search",
+        "description": "",
+        "operationId": "search",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Search",
+            "required": "true",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "searchString": {
+                  "type": "number",
+                  "required": "true"
+                },
+                "searchArea": {
+                  "type": "string",
+                  "enum": [
+                    "sets",
+                    "collections",
+                    "members",
+                    "groups",
+                    "shop"
+                  ],
+                  "required": "true"
+                },
+                "offset": {
+                  "type": "number"
+                },
+                "limit": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "items": {
+                  "$ref": "#/definitions/Items"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/addSet": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "add set",
+        "description": "",
+        "operationId": "addSet",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Add Comment To Set",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "required": true
+                },
+                "description": {
+                  "type": "string",
+                  "required": true
+                },
+                "data": {
+                  "type": "string",
+                  "required": true
+                },
+                "items": {
+                  "type": "array",
+                  "required": true,
+                  "items": {
+                    "type": "number"
+                  }
+                },
+                "image": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/getSetData": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "get set data",
+        "description": "",
+        "operationId": "getSetData",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Get Set Data",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "setId": {
+                  "type": "number",
+                  "required": true
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "data": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/deleteSet": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "delete set",
+        "description": "",
+        "operationId": "deleteSet",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Get Set Data",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "setId": {
+                  "type": "number",
+                  "required": true
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/updateSet": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "update set",
+        "description": "",
+        "operationId": "updateSet",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Add Comment To Set",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "setId": {
+                  "type": "number",
+                  "required": true
+                },
+                "title": {
+                  "type": "string",
+                  "required": true
+                },
+                "description": {
+                  "type": "string",
+                  "required": true
+                },
+                "data": {
+                  "type": "string",
+                  "required": true
+                },
+                "items": {
+                  "type": "array",
+                  "required": true,
+                  "items": {
+                    "type": "number"
+                  }
+                },
+                "image": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/getLikedItems": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "get Liked Items",
+        "description": "",
+        "operationId": "getLikedItems",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Liked Items",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "userId": {
+                  "type": "number"
+                },
+                "offset": {
+                  "type": "number"
+                },
+                "limit": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "items": {
+                  "$ref": "#/definitions/Items"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/getLikedSets": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "get Liked Sets",
+        "description": "",
+        "operationId": "getLikedSets",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Liked Sets",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "userId": {
+                  "type": "number"
+                },
+                "offset": {
+                  "type": "number"
+                },
+                "limit": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "items": {
+                  "$ref": "#/definitions/SetsUserPhoto"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/getPrivateMessageOpponents": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "get Private Message Opponents",
+        "description": "",
+        "operationId": "getPrivateMessageOpponents",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "items": {
+                  "$ref": "#/definitions/Users"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/getPrivateMessages": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "get Private Messages",
+        "description": "",
+        "operationId": "getPrivateMessages",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "get Private Messages",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "userId": {
+                  "type": "number",
+                  "required": "true"
+                },
+                "offset": {
+                  "type": "number"
+                },
+                "limit": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "items": {
+                  "$ref": "#/definitions/PrivateMessages"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/writePrivateMessage": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "write Private Messages",
+        "description": "",
+        "operationId": "writePrivateMessages",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "write Private Messages",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "userTo": {
+                  "type": "number",
+                  "required": true
+                },
+                "message": {
+                  "type": "string",
+                  "required": true
+                },
+                "parentMsgId": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/getGroupMessages": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "get Group Messages",
+        "description": "",
+        "operationId": "getGroupMessages",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "get Group Messages",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "groupId": {
+                  "type": "integer",
+                  "required": true
+                },
+                "offset": {
+                  "type": "number"
+                },
+                "limit": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "items": {
+                  "$ref": "#/definitions/GroupMessages"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/writeGroupMessage": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "write Group Messages",
+        "description": "",
+        "operationId": "writeGroupMessages",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "write Group Messages",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "groupId": {
+                  "type": "number",
+                  "required": true
+                },
+                "nickName": {
+                  "type": "string",
+                  "required": true
+                },
+                "message": {
+                  "type": "string",
+                  "required": true
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/setPushToken": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "set Push Token",
+        "description": "",
+        "operationId": "setPushToken",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "set Push Token",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "pushToken": {
+                  "type": "string",
+                  "required": true
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/getProfile": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "get profile",
+        "description": "",
+        "operationId": "getProfile",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Get Profile",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "userId": {
+                  "type": "number"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/User"
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/getUserGroups": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "get User Groups",
+        "description": "",
+        "operationId": "getUserGroups",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "User Groups",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "userId": {
+                  "type": "number",
+                  "required": true
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "items": {
+                  "$ref": "#/definitions/Groups"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/followUser": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "follow user",
+        "description": "",
+        "operationId": "followUser",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Follow User",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "userId": {
+                  "type": "number",
+                  "required": true
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/unfollowUser": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "unfollow user",
+        "description": "",
+        "operationId": "unfollowUser",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Unfollow User",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "userId": {
+                  "type": "number",
+                  "required": true
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/profileUpdate": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "profile update",
+        "description": "",
+        "operationId": "profileUpdate",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "profileUpdate",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "firstName": {
+                  "type": "string"
+                },
+                "lastName": {
+                  "type": "string"
+                },
+                "userName": {
+                  "type": "string"
+                },
+                "email": {
+                  "type": "string"
+                },
+                "currencyId": {
+                  "type": "integer"
+                },
+                "currentPassword": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/joinToGroup": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "join to group",
+        "description": "",
+        "operationId": "joinToGroup",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Join to Group",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "groupId": {
+                  "type": "string",
+                  "required": true
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "result": {
+                  "type": "string",
+                  "enum": [
+                    "joined",
+                    "invited"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/getJoinInvites": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "get join invites",
+        "description": "",
+        "operationId": "getJoinInvites",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "invited_id": {
+                    "type": "number"
+                  },
+                  "group_id": {
+                    "type": "number"
+                  },
+                  "user": {
+                    "$ref": "#/definitions/User"
+                  },
+                  "group": {
+                    "$ref": "#/definitions/Group"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/approveJoinInvite": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "approve join invite",
+        "description": "",
+        "operationId": "approveJoinInvite",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Approve Join Invite",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "groupId": {
+                  "type": "number",
+                  "required": true
+                },
+                "userId": {
+                  "type": "number",
+                  "required": true
+                },
+                "approved": {
+                  "type": "boolean",
+                  "required": true
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/uploadPhoto": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "upload photo",
+        "description": "",
+        "operationId": "uploadPhoto",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "uploadPhoto",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "imageName": {
+                  "type": "string",
+                  "required": "true"
+                },
+                "image": {
+                  "type": "string",
+                  "required": "true"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/leaveGroup": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "leave group",
+        "description": "",
+        "operationId": "leaveGroup",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "leaveGroup",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "groupId": {
+                  "type": "number",
+                  "required": "true"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/getContests": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "get contests",
+        "description": "",
+        "operationId": "getContests",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/Contests"
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/getContestPhotos": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "get Contest Photos",
+        "description": "",
+        "operationId": "getContestPhotos",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Contest Photos",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "contestId": {
+                  "type": "number",
+                  "required": true
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "object",
+              "properties": {
+                "items": {
+                  "$ref": "#/definitions/ContestPhotos"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/publishContestPhoto": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "publish contest photo",
+        "description": "",
+        "operationId": "publishContestPhoto",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "uploadPhoto",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "contestId": {
+                  "type": "integer",
+                  "required": true
+                },
+                "imageName": {
+                  "type": "string",
+                  "required": "true"
+                },
+                "image": {
+                  "type": "string",
+                  "required": "true"
+                }
+              }
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    },
+    "/getCountries": {
+      "post": {
+        "tags": [
+          "api"
+        ],
+        "summary": "get Countries",
+        "description": "",
+        "operationId": "getCountries",
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer"
+                  },
+                  "title_en": {
+                    "type": "string"
+                  },
+                  "currency": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "api_key": []
+          }
+        ]
+      }
+    }
+  },
+  "securityDefinitions": {
+    "api_key": {
+      "type": "apiKey",
+      "name": "api_token",
+      "in": "query"
+    }
+  },
+  "definitions": {
+    "Items": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Item"
+      }
+    },
+    "Item": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "title_en": {
+          "type": "string"
+        },
+        "price": {
+          "type": "string"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "user_currency": {
+          "type": "string"
+        },
+        "photos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "table_id": {
+                "type": "integer"
+              },
+              "photo_name": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "Item&Similar": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "title_en": {
+          "type": "string"
+        },
+        "price": {
+          "type": "string"
+        },
+        "currency": {
+          "type": "string"
+        },
+        "user_currency": {
+          "type": "string"
+        },
+        "photos": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "table_id": {
+                "type": "integer"
+              },
+              "photo_name": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "similar": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Item"
+          }
+        }
+      }
+    },
+    "Sets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "$ref": "#/definitions/Set"
+      }
+    },
+    "MySets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "$ref": "#/definitions/MySet"
+      }
+    },
+    "Set": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "user_id": {
+          "type": "integer"
+        },
+        "title_en": {
+          "type": "string"
+        },
+        "text_en": {
+          "type": "string"
+        },
+        "likes": {
+          "type": "integer"
+        },
+        "created": {
+          "type": "string"
+        },
+        "is_liked": {
+          "type": "boolean"
+        },
+        "comments_counter": {
+          "type": "integer"
+        },
+        "likes_counter": {
+          "type": "integer"
+        },
+        "groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Group"
+          }
+        },
+        "photo": {
+          "type": "object",
+          "properties": {
+            "table_id": {
+              "type": "integer"
+            },
+            "photo_name": {
+              "type": "string"
+            }
+          }
+        },
+        "user": {
+          "type": "object",
+          "$ref": "#/definitions/User"
+        }
+      }
+    },
+    "SetsUserPhoto": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "$ref": "#/definitions/SetUserPhoto"
+      }
+    },
+    "SetUserPhoto": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "user_id": {
+          "type": "integer"
+        },
+        "title_en": {
+          "type": "string"
+        },
+        "text_en": {
+          "type": "string"
+        },
+        "likes": {
+          "type": "integer"
+        },
+        "created": {
+          "type": "string"
+        },
+        "is_liked": {
+          "type": "boolean"
+        },
+        "comments_counter": {
+          "type": "integer"
+        },
+        "likes_counter": {
+          "type": "integer"
+        },
+        "photo": {
+          "type": "object",
+          "properties": {
+            "table_id": {
+              "type": "integer"
+            },
+            "photo_name": {
+              "type": "string"
+            }
+          }
+        },
+        "user": {
+          "type": "object",
+          "$ref": "#/definitions/User"
+        }
+      }
+    },
+    "MySet": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "user_id": {
+          "type": "integer"
+        },
+        "title_en": {
+          "type": "string"
+        },
+        "likes": {
+          "type": "integer"
+        },
+        "created": {
+          "type": "string"
+        },
+        "is_liked": {
+          "type": "boolean"
+        },
+        "comments_counter": {
+          "type": "integer"
+        },
+        "likes_counter": {
+          "type": "integer"
+        },
+        "groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Group"
+          }
+        },
+        "photo": {
+          "type": "object",
+          "properties": {
+            "table_id": {
+              "type": "integer"
+            },
+            "photo_name": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "SetShort": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "user_id": {
+          "type": "integer"
+        },
+        "title_en": {
+          "type": "string"
+        },
+        "likes": {
+          "type": "integer"
+        },
+        "created": {
+          "type": "string"
+        },
+        "is_liked": {
+          "type": "boolean"
+        },
+        "comments_counter": {
+          "type": "integer"
+        },
+        "likes_counter": {
+          "type": "integer"
+        },
+        "groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Group"
+          }
+        },
+        "photo": {
+          "type": "object",
+          "properties": {
+            "table_id": {
+              "type": "integer"
+            },
+            "photo_name": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "SetShort2": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "user_id": {
+          "type": "integer"
+        },
+        "title_en": {
+          "type": "string"
+        },
+        "likes": {
+          "type": "integer"
+        },
+        "created": {
+          "type": "string"
+        },
+        "is_liked": {
+          "type": "boolean"
+        },
+        "comments_counter": {
+          "type": "integer"
+        },
+        "likes_counter": {
+          "type": "integer"
+        },
+        "photo": {
+          "type": "object",
+          "properties": {
+            "table_id": {
+              "type": "integer"
+            },
+            "photo_name": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "SetShort3": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "user_id": {
+          "type": "integer"
+        },
+        "title_en": {
+          "type": "string"
+        },
+        "likes": {
+          "type": "integer"
+        },
+        "created": {
+          "type": "string"
+        },
+        "is_liked": {
+          "type": "boolean"
+        },
+        "comments_counter": {
+          "type": "integer"
+        },
+        "likes_counter": {
+          "type": "integer"
+        },
+        "groups": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Group"
+          }
+        },
+        "photo": {
+          "type": "object",
+          "properties": {
+            "table_id": {
+              "type": "integer"
+            },
+            "photo_name": {
+              "type": "string"
+            }
+          }
+        },
+        "user": {
+          "type": "object",
+          "$ref": "#/definitions/User"
+        },
+        "items": {
+          "$ref": "#/definitions/Items"
+        },
+        "contest": {
+          "$ref": "#/definitions/Contest"
+        }
+      }
+    },
+    "Feeds": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "user_id": {
+            "type": "integer"
+          },
+          "title_en": {
+            "type": "string"
+          },
+          "likes": {
+            "type": "number"
+          },
+          "created": {
+            "type": "string"
+          },
+          "is_liked": {
+            "type": "boolean"
+          },
+          "comments_counter": {
+            "type": "integer"
+          },
+          "photo": {
+            "type": "object",
+            "properties": {
+              "table_id": {
+                "type": "integer"
+              },
+              "photo_name": {
+                "type": "string"
+              }
+            }
+          },
+          "user": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "integer"
+              },
+              "fname": {
+                "type": "string"
+              },
+              "lname": {
+                "type": "string"
+              },
+              "photo": {
+                "type": "object",
+                "properties": {
+                  "table_id": {
+                    "type": "integer"
+                  },
+                  "photo_name": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "Groups": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Group"
+      }
+    },
+    "Group": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "is_private": {
+          "type": "boolean"
+        },
+        "members_counter": {
+          "type": "integer"
+        },
+        "image": {
+          "type": "string"
+        },
+        "contests_counter": {
+          "type": "integer"
+        },
+        "is_member": {
+          "type": "boolean"
+        },
+        "photo_counter": {
+          "type": "number"
+        },
+        "request_counter": {
+          "type": "number"
+        },
+        "wins_counter": {
+          "type": "number"
+        },
+        "is_invited": {
+          "type": "boolean"
+        }
+      }
+    },
+    "Users": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/User"
+      }
+    },
+    "User": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "fname": {
+          "type": "string"
+        },
+        "lname": {
+          "type": "string"
+        },
+        "username": {
+          "type": "string"
+        },
+        "user_type": {
+          "type": "string"
+        },
+        "following_counter": {
+          "type": "number"
+        },
+        "follower_counter": {
+          "type": "number"
+        },
+        "is_followed": {
+          "type": "boolean"
+        },
+        "photo": {
+          "type": "object",
+          "properties": {
+            "table_id": {
+              "type": "integer"
+            },
+            "photo_name": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "Categories": {
+      "type": "object",
+      "properties": {
+        "Clothing": {
+          "$ref": "#/definitions/Category"
+        },
+        "Shoes": {
+          "$ref": "#/definitions/Category"
+        },
+        "Accessories": {
+          "$ref": "#/definitions/Category"
+        },
+        "Beauty": {
+          "$ref": "#/definitions/Category"
+        }
+      }
+    },
+    "Category": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "title": {
+          "type": "string"
+        },
+        "image": {
+          "type": "string"
+        },
+        "subcategories": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "id": {
+                "type": "number"
+              },
+              "title": {
+                "type": "string"
+              },
+              "image": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "Collections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "$ref": "#/definitions/Collection"
+      }
+    },
+    "Collection": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "user_id": {
+          "type": "integer"
+        },
+        "title_en": {
+          "type": "string"
+        },
+        "text_en": {
+          "type": "string"
+        },
+        "items": {
+          "$ref": "#/definitions/Items"
+        },
+        "sets": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/SetShort2"
+          }
+        },
+        "created": {
+          "type": "string"
+        },
+        "user": {
+          "$ref": "#/definitions/User"
+        }
+      }
+    },
+    "Contests": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "$ref": "#/definitions/Contest"
+      }
+    },
+    "Contest": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "title_en": {
+          "type": "string"
+        },
+        "text_en": {
+          "type": "string"
+        },
+        "text2_en": {
+          "type": "string"
+        },
+        "created": {
+          "type": "string"
+        },
+        "expires": {
+          "type": "string"
+        },
+        "time_diff": {
+          "type": "string"
+        },
+        "is_photo_submitted": {
+          "type": "boolean"
+        },
+        "photo": {
+          "type": "object",
+          "properties": {
+            "table_id": {
+              "type": "integer"
+            },
+            "photo_name": {
+              "type": "string"
+            }
+          }
+        },
+        "winners": {
+          "$ref": "#/definitions/Winners"
+        }
+      }
+    },
+    "Comments": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "$ref": "#/definitions/Comment"
+      }
+    },
+    "Comment": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "title_en": {
+          "type": "string"
+        },
+        "from_id": {
+          "type": "integer"
+        },
+        "procitano": {
+          "type": "integer"
+        },
+        "created": {
+          "type": "string"
+        },
+        "user": {
+          "$ref": "#/definitions/User"
+        }
+      }
+    },
+    "PrivateMessages": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/PrivateMessage"
+      }
+    },
+    "PrivateMessage": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "parent_msg": {
+          "type": "integer"
+        },
+        "from_id": {
+          "type": "integer"
+        },
+        "to_id": {
+          "type": "integer"
+        },
+        "text_en": {
+          "type": "string"
+        },
+        "procitano": {
+          "type": "boolean"
+        },
+        "created": {
+          "type": "string"
+        },
+        "user_from": {
+          "type": "object",
+          "$ref": "#/definitions/User"
+        },
+        "user_to": {
+          "type": "object",
+          "$ref": "#/definitions/User"
+        }
+      }
+    },
+    "GroupMessages": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/GroupMessage"
+      }
+    },
+    "GroupMessage": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "user": {
+          "type": "string"
+        },
+        "chat": {
+          "type": "string"
+        },
+        "d_t": {
+          "type": "string"
+        }
+      }
+    },
+    "ContestPhotos": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/ContestPhoto"
+      }
+    },
+    "ContestPhoto": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "contest_id": {
+          "type": "integer"
+        },
+        "photo_id": {
+          "type": "integer"
+        },
+        "user_id": {
+          "type": "integer"
+        },
+        "likes": {
+          "type": "integer"
+        },
+        "date_created": {
+          "type": "string"
+        },
+        "date_likes": {
+          "type": "string"
+        },
+        "is_liked": {
+          "type": "boolean"
+        },
+        "photo": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "photo_name": {
+              "type": "string"
+            }
+          }
+        },
+        "user": {
+          "$ref": "#/definitions/User"
+        }
+      }
+    },
+    "Winners": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/Winner"
+      }
+    },
+    "Winner": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "contest_id": {
+          "type": "integer"
+        },
+        "photo_id": {
+          "type": "integer"
+        },
+        "user_id": {
+          "type": "integer"
+        },
+        "contest_title": {
+          "type": "string"
+        },
+        "win_place": {
+          "type": "integer"
+        },
+        "photo": {
+          "type": "object",
+          "properties": {
+            "id": {
+              "type": "integer"
+            },
+            "photo_name": {
+              "type": "string"
+            }
+          }
+        },
+        "user": {
+          "$ref": "#/definitions/User"
+        }
+      }
+    }
+  }
+}
